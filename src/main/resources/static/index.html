@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="background-shape shape-1"></div>
+    <div class="background-shape shape-2"></div>
+
+    <div class="container glass-panel">
+        <header>
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <h1>Secure Notes</h1>
+            </div>
+            <p class="subtitle">End-to-end encrypted text sharing.</p>
+        </header>
+
+        <div id="alert-box" class="alert" style="display: none;"></div>
+
+        <!-- View 1: Access by Code -->
+        <div id="access-view">
+            <div class="note-form">
+                <div class="form-group mb-0">
+                    <label for="encryption-code">Enter Your Secret Code</label>
+                    <p class="subtitle" style="margin-bottom: 1rem; font-size: 0.85rem;">This acts as your password. If
+                        a note doesn't exist, we'll create a new one securely with this code.</p>
+                    <div class="input-with-button">
+                        <input type="text" id="encryption-code" placeholder="e.g. MySuperSecretCode123" required>
+                        <button id="access-btn" class="btn-primary btn-inline">Access Note</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View 2: Editor View -->
+        <div id="editor-view" style="display: none;">
+            <div class="note-form">
+                <div class="form-group">
+                    <label for="note-content">Your Secret Note</label>
+                    <textarea id="note-content" placeholder="Type something highly confidential here..."></textarea>
+                </div>
+
+                <div class="dual-actions" style="display: flex; gap: 10px;">
+                    <button id="save-btn" class="btn-primary" style="flex: 1;">
+                        <span>Save Note</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+
+                    <button id="delete-btn" class="btn-secondary"
+                        style="flex: 1; background: rgba(220, 53, 69, 0.1); border-color: rgba(220, 53, 69, 0.3); color: #ff6b6b;">
+                        <span>Delete Note</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <button id="back-btn" class="btn-secondary" style="width: 100%;">Close & Exit</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
