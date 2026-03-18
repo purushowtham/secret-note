@@ -26,4 +26,10 @@ public class Note {
     @Column(nullable = false)
     private String passwordHash;
 
+    @Column(name = "secret_code")
+    private String secretCode;
+
+    @OneToMany(mappedBy = "note", cascade = CascadeType.ALL, orphanRemoval = true)
+    private java.util.List<FileAttachment> attachments = new java.util.ArrayList<>();
+
 }
